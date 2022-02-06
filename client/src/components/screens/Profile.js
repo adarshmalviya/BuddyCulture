@@ -30,7 +30,7 @@ const Profile = () => {
   useEffect(() => {
     if (url) {
       // Uploading Image url to server
-      fetch("http://localhost:5000/dpupdate", {
+      fetch("/dpupdate", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -43,9 +43,6 @@ const Profile = () => {
           if (data.error) {
             toast.error(`${data.error}`, { position: "top-center" });
           }
-          // else {
-          //   toast.success("Updated Successfully", { position: "top-center", autoClose: 3000 });
-          // }
           setLoding(false)
         })
         .catch((err) => {

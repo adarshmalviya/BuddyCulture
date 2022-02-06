@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "crypto": "^1.0.1",
+    "express": "^4.17.2",
+    "joi": "^13.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.7",
+    "nodemailer": "^6.7.2"
+  }
+}

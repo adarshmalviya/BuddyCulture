@@ -1,0 +1,670 @@
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&family=Supermercado+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quintessential", cursive !important;
+  height: 100%;
+}
+img {
+  margin: 5px;
+}
+ul {
+  list-style-type: none;
+}
+.brand-logo {
+  top: 24px;
+  text-decoration: none;
+  font-family: "Grand Hotel", cursive;
+}
+a.brand-logo {
+  display: flex;
+  position: relative;
+}
+div.logo-name {
+  color: white;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+}
+.navbar-text {
+  text-decoration: none;
+  font-size: large;
+  color: white !important;
+}
+a.navbar-text {
+  padding-bottom: 0px;
+}
+.navbar-text:hover {
+  background-color: inherit;
+}
+.navbar-text > img {
+  height: 21px;
+}
+.navbar-text:hover img {
+  transform: rotateY(180deg);
+}
+.navbar-small-screen {
+  display: none !important;
+}
+.user-data-text {
+  font-size: 15px;
+}
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.friends-logo {
+  margin-top: 10px;
+  width: 80px;
+  height: 80px;
+  animation: spin 3s infinite;
+}
+.navbar > .container {
+  margin: 0px;
+}
+.nav-links {
+  text-align: right;
+}
+.navbar-list {
+  display: flex;
+  text-decoration: none;
+}
+.offcanvas-body {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+}
+.offcanvas-header {
+  background-color: #212335;
+  padding: 0px;
+}
+#offcanvasNavbarLabel {
+  color: white;
+}
+.comment-user-dp {
+  height: 22px;
+  width: 22px;
+  border-radius: 11px;
+}
+.user-dp {
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+}
+.btn-close {
+  background-color: white !important;
+}
+button.navbar-toggler {
+  margin-top: -52px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+button.navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.comment-section {
+  display: flex;
+}
+.send_img {
+  height: 25px;
+  cursor: pointer;
+}
+.send-submit-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.send-submit-btn:focus {
+  background: transparent;
+}
+.unauth-signup {
+  margin-right: -10px;
+}
+
+/* Login and SignUp */
+.mycard {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+.auth-card {
+  text-align: center;
+  max-width: 400px;
+  /* height: 400px; */
+  padding: 20px;
+  margin: 50px auto;
+  margin-top: 100px;
+  margin-right: 100px;
+  height: 350px;
+  width: 400px;
+}
+.btn-login {
+  margin: 35px;
+  height: fit-content;
+}
+.btn-follow-unfollow {
+  /* margin: 35px; */
+  margin-left: 3px;
+  margin-top: 20px;
+  /* height: fit-content; */
+}
+.btn-logout {
+  margin-right: 10px;
+}
+.brand-logo-home {
+  margin: 20px;
+  font-family: "Grand Hotel", cursive;
+}
+
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid blue;
+  box-shadow: 0 1px 0 0 blue;
+}
+.input-field input[type="password"]:focus {
+  border-bottom: 1px solid blue;
+  box-shadow: 0 1px 0 0 blue;
+}
+.friends_home_page {
+  height: 62vh;
+  width: 53vw;
+  margin: 64px;
+  margin-left: 205px;
+}
+.home-page {
+  display: flex;
+}
+.fa-spin {
+  margin-right: 5px;
+}
+/* Profile */
+.userProfile {
+  max-width: 750px;
+  margin: 0px auto;
+}
+.profile-ffl-data {
+  display: flex;
+}
+.profile-ffl-data > h6 {
+  margin-right: 12px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-around;
+  margin: 18px 0px;
+  border-bottom: 1px solid gray;
+}
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  margin-bottom: 18px;
+}
+.profile-data {
+  display: flex;
+  justify-content: space-between;
+  width: 219px;
+}
+.spinner {
+  margin: 40px 800px;
+}
+.profile-info {
+  width: 160px;
+}
+.profile-info-me {
+  width: 222px;
+}
+
+/* Home */
+/* .home {
+  background: #00f260;
+  background: -webkit-linear-gradient(to right, #0575e6, #00f260);
+  background: linear-gradient(to right, #0575e6, #00f260);
+  position: relative;
+}
+/* .home-items {
+  position: absolute;
+  margin-top: 10px;
+} */
+.home {
+  /* background-image: url("../src/images/home_background_img.webp");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-attachment: fixed;
+  background-size: cover; */
+  /* background: #40e0d0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff0080,
+    #ff8c00,
+    #40e0d0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
+
+  position: absolute;
+  width: 100%;
+}
+.home-userpost {
+  height: 100vh;
+}
+.gallery {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.gallery-img {
+  /* margin: 10px; */
+  width: 210px;
+  height: 200px;
+}
+.gallery > a {
+  margin: 0px 15px;
+}
+.card {
+  position: absolute;
+}
+div.card {
+  border-radius: 2.25rem;
+}
+.home-card {
+  max-width: 500px;
+  /* height: max-content; */
+  margin: 20px auto;
+  padding: 5px 30px;
+  position: absolute;
+}
+.home-card:hover {
+  box-shadow: 2px 2px 25px gold;
+}
+.home-card-img {
+  height: 50vh;
+  width: 100%;
+  margin: auto;
+}
+.home-card-content {
+  margin-right: 10px;
+}
+.like-content {
+  display: flex;
+  margin: 11px 0px;
+}
+.btn-liked {
+  color: red;
+  cursor: pointer;
+}
+.btn-unliked {
+  color: black;
+  cursor: pointer;
+}
+.createPost {
+  margin: 81px auto;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+.delete-icon {
+  float: right;
+  margin: 5px;
+  cursor: pointer;
+}
+.comment-clear {
+  float: right;
+  cursor: pointer;
+}
+.postedByName {
+  color: black;
+  font-family: "Supermercado One", cursive;
+  text-decoration: none;
+}
+.postedByName:hover {
+  color: inherit;
+}
+#root {
+  height: 100%;
+}
+.modal {
+  display: block;
+  height: 100%;
+  min-height: -webkit-fill-available;
+  background: transparent;
+}
+.btn-outline-success {
+  color: white !important;
+  background-color: green !important;
+}
+.small-form-search {
+  background-color: white !important;
+}
+/* Background with annimation */
+/* .bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgb(121, 19, 204) 50%,
+    rgb(9, 255, 0) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+.bg3 {
+  animation-duration: 5s;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+} */
+
+/* Background Annimation for Create Post */
+.background {
+  background: linear-gradient(132deg, #fc415a, #591bc5, #212335);
+  /* background-size: 400% 400%; */
+  animation: Gradient 15s ease infinite;
+  position: relative;
+  height: 91.5vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0px;
+}
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #d7d4e4;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #fff;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+/* Animate Background*/
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Reset Card */
+.reset-card {
+  margin: 100px auto;
+  width: auto;
+  height: 300px;
+}
+
+@media screen and (max-width: 1232px) {
+  .home-page {
+    flex-direction: column-reverse;
+  }
+  .friends_home_page {
+    margin: 35px auto;
+  }
+  .mycard {
+    margin: 0px;
+  }
+  .auth-card {
+    margin: 10px auto;
+  }
+  .reset-card {
+    margin: 100px auto;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .brand-logo {
+    top: -8px;
+  }
+  /* .navbar-text {
+    margin-top: -62px;
+  } */
+  .navbar-large-screen {
+    display: none !important;
+  }
+  .navbar-small-screen {
+    display: flex !important;
+  }
+  a.navbar-text {
+    margin: 0px;
+  }
+  a.unauth {
+    margin-top: -62px;
+  }
+}
+/* @media screen and (max-width: 994px) {
+  .brand-logo {
+    top: -8px;
+  }
+  .navbar-large-screen {
+    display: none !important;
+  }
+  .navbar-small-screen {
+    display: flex !important;
+  }
+  a.navbar-text {
+    margin: 0px;
+  }
+  a.unauth {
+    margin-top: -62px;
+  }
+}
+ */
+
+@media screen and (max-width: 780px) {
+  .userProfile {
+    width: 525px;
+  }
+  img.gallery-img {
+    width: 135px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .home-card {
+    max-width: 400px;
+    width: auto;
+  }
+  .userProfile {
+    width: 490px;
+  }
+  img.gallery-img {
+    width: 120px;
+  }
+  .gallery-img {
+    height: 175px;
+  }
+  .profile-data {
+    width: 198px;
+  }
+  .profile-ffl-data > h6 {
+    margin-right: 9px;
+  }
+  .user-data-text {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .friends-logo {
+    display: none !important;
+  }
+  .logo-name {
+    font-size: 22px;
+  }
+  .navbar-toggler {
+    margin-top: -20px !important;
+  }
+  a.unauth {
+    margin-top: -30px;
+    font-size: 15px;
+  }
+  a.unauth-login {
+    margin-right: -20px;
+  }
+  img.navbar-unauth-img {
+    height: 17px;
+  }
+
+  .userProfile {
+    width: 330px;
+  }
+  .gallery > a {
+    margin: 0px 5px;
+  }
+  img.gallery-img {
+    width: 90px;
+  }
+  .gallery-img {
+    height: 150px;
+  }
+  .profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 65px;
+  }
+  .profile-info-me {
+    margin-left: 11px;
+  }
+  .profile-data-me {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 422px) {
+  .auth-card {
+    max-width: 310px;
+    width: auto;
+    /* height: 100%; */
+  }
+  .home-card {
+    max-width: 320px;
+    width: auto;
+    /* height: 100vh; */
+  }
+  .home-card-img {
+    height: 40vh;
+  }
+  .profile-data {
+    width: 179px;
+  }
+  .user-data-text {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .auth-card {
+    max-width: 270px;
+    width: auto;
+    /* height: 100%; */
+  }
+  .home-card {
+    max-width: 280px;
+    width: auto;
+  }
+
+  .userProfile {
+    width: 280px;
+  }
+  .gallery > a {
+    margin: 0px 3px;
+  }
+  img.gallery-img {
+    width: 75px;
+  }
+  .gallery-img {
+    height: 90px;
+  }
+  .profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+  }
+  .btn-follow-unfollow {
+    height: 28px;
+    margin-bottom: 15px;
+  }
+  .profile-data {
+    width: 154px;
+  }
+}

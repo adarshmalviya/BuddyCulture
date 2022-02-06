@@ -12,7 +12,7 @@ const NewPassword = () => {
     const PostData = () => {
         setLoding(true)
 
-        fetch("http://localhost:5000/new-password", {
+        fetch("/new-password", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ password, token })
@@ -55,15 +55,6 @@ const NewPassword = () => {
                 </button>
             </div>
         </div>
-        // <div className="mycard">
-        //     <div className="card auth-card">
-        //         <h2 className="brand-logo">Instagram</h2>
-        //         <input type="password" placeholder="Enter new password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        //         <button className="btn waves-effect waves-light btn-login blue loginBtn" onClick={() => PostData()}>
-        //             Change Password
-        //         </button>
-        //     </div>
-        // </div>
     );
 };
 

@@ -14,7 +14,7 @@ const Login = () => {
   const PostData = async () => {
     setLoding(true)
 
-    fetch("http://localhost:5000/signin", {
+    fetch("/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

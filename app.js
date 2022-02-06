@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 5000
 
 const app = express()
 
-mongoose.connect(MONGOURI)
+mongoose.connect(MONGOURI,{
+    useNewUrlParser:true,
+    useUnifiedTopology: true
+})
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log("Failed to connect MongoDB", err))
 

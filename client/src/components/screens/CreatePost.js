@@ -14,7 +14,7 @@ const CreatePost = () => {
   useEffect(() => {
     if (url) {
       // Uploading Image url to server
-      fetch("http://localhost:5000/createpost", {
+      fetch("/createpost", {
         method: "post",
         headers: {
           "Content-Type": "application/json",

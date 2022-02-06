@@ -10,10 +10,6 @@ const { JWT_SECRET } = require('../config/keys')
 const nodemailer = require('nodemailer')
 const { GMAIL_U, GMAIL_P, EMAIL } = require('../config/keys')
 
-router.get('/', (req, res) => {
-    res.send("Auth!");
-})
-
 // Forget Password Section
 var transporter = nodemailer.createTransport({
     service: "gmail",

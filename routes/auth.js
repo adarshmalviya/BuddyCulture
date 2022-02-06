@@ -86,7 +86,7 @@ router.post('/reset-password', (req, res) => {
                     .then((result) => {
                         transporter.sendMail({
                             to: user.email,
-                            from: "buddyculture@gmail.com",
+                            from: GMAIL_U,
                             subject: "Password Reset Link",
                             html: `<h2>On your request here is the password Reset Link</h2>
                             <h3>Link is valid for 1 hour</h3>

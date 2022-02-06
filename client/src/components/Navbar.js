@@ -163,6 +163,11 @@ const NavbarComponent = () => {
       </Modal>
     );
   }
+  function clearplusexit() {
+    localStorage.clear();
+    dispatch({ type: "CLEAR" });
+    setExpandedNav(false);
+  }
   return (
     <React.Fragment>
       {getModal()}
@@ -272,11 +277,7 @@ const NavbarComponent = () => {
                       <li className="navbar-list" key="logout">
                         <Link
                           className="navbar-text"
-                          onClick={() => {
-                            localStorage.clear();
-                            dispatch({ type: "CLEAR" });
-                          }}
-                          to="/login" onClick={() => setExpandedNav(false)}
+                          to="/login" onClick={() => clearplusexit()}
                         >
                           <img src={logout_img} alt="logout_img" />
                           Logout

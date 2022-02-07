@@ -269,7 +269,7 @@ button.navbar-toggler:focus {
 
   position: absolute;
   width: 100%;
-  min-height: 878px;
+  min-height: 95vh;
   height: auto;
 }
 .home-userpost {

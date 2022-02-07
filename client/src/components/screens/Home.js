@@ -203,31 +203,79 @@ const Home = () => {
                 <h6 className="home-card-content">{item.title}</h6>
                 <p className="home-card-content">{item.body}</p>
                 <div className="comment-box">
-                  {item.comments.map((record) => {
-                    return (
-                      <h6 key={record._id}>
+                  {item.comments.length > 2 ?
+                  <React.Fragment>
+                      <h6 key={item.comments[0]._id}>
                         <img
-                          src={record.postedBy.dp}
+                          src={item.comments[0].postedBy.dp}
                           alt="dp"
                           className="comment-user-dp"
                         />
                         <span
                           style={{ fontFamily: "Supermercado One, cursive" }}
                         >
-                          {record.postedBy.name}
+                          {item.comments[0].postedBy.name}
                         </span>{" "}
-                        {record.text}
-                        {record.postedBy._id == state._id ? (
+                        {item.comments[0].text}
+                        {item.comments[0].postedBy._id == state._id ? (
                           <i
                             className="material-icons comment-clear"
-                            onClick={() => deleteComment(item._id, record._id)}
+                            onClick={() => deleteComment(item._id, item.comments[0]._id)}
                           >
                             clear
                           </i>
                         ) : null}
                       </h6>
-                    );
-                  })}
+                      <h6 key={item.comments[1]._id}>
+                        <img
+                          src={item.comments[1].postedBy.dp}
+                          alt="dp"
+                          className="comment-user-dp"
+                        />
+                        <span
+                          style={{ fontFamily: "Supermercado One, cursive" }}
+                        >
+                          {item.comments[1].postedBy.name}
+                        </span>{" "}
+                        {item.comments[1].text}
+                        {item.comments[1].postedBy._id == state._id ? (
+                          <i
+                            className="material-icons comment-clear"
+                            onClick={() => deleteComment(item._id, item.comments[1]._id)}
+                          >
+                            clear
+                          </i>
+                        ) : null}
+                      </h6>
+                      <Link to={`/post/${item._id}`} className='more_comment'>View all {item.comments.length} comments</Link>
+                    </React.Fragment>
+                    :
+                    item.comments.map((record) => {
+                      return (
+                        <h6 key={record._id}>
+                          <img
+                            src={record.postedBy.dp}
+                            alt="dp"
+                            className="comment-user-dp"
+                          />
+                          <span
+                            style={{ fontFamily: "Supermercado One, cursive" }}
+                          >
+                            {record.postedBy.name}
+                          </span>{" "}
+                          {record.text}
+                          {record.postedBy._id == state._id ? (
+                            <i
+                              className="material-icons comment-clear"
+                              onClick={() => deleteComment(item._id, record._id)}
+                            >
+                              clear
+                            </i>
+                          ) : null}
+                        </h6>
+                      );
+                    }
+                    )}
 
                   <form
                     onSubmit={(e) => {

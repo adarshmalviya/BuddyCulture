@@ -20,6 +20,12 @@ img {
 ul {
   list-style-type: none;
 }
+.no-post-found {
+  width: 100%;
+  text-align: center;
+  margin: 50px auto;
+  color: white;
+}
 .brand-logo {
   top: 24px;
   text-decoration: none;

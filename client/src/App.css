@@ -274,7 +274,7 @@ button.navbar-toggler:focus {
   width: 100%;
 }
 .home-userpost {
-  height: 100vh;
+  height: auto;
 }
 .gallery {
   display: flex;

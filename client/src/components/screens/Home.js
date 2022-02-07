@@ -205,43 +205,43 @@ const Home = () => {
                 <div className="comment-box">
                   {item.comments.length > 2 ?
                   <React.Fragment>
-                      <h6 key={item.comments[0]._id}>
+                      <h6 key={item.comments[item.comments.length - 1]._id}>
                         <img
-                          src={item.comments[0].postedBy.dp}
+                          src={item.comments[item.comments.length - 1].postedBy.dp}
                           alt="dp"
                           className="comment-user-dp"
                         />
                         <span
                           style={{ fontFamily: "Supermercado One, cursive" }}
                         >
-                          {item.comments[0].postedBy.name}
+                          {item.comments[item.comments.length - 1].postedBy.name}
                         </span>{" "}
-                        {item.comments[0].text}
-                        {item.comments[0].postedBy._id == state._id ? (
+                        {item.comments[item.comments.length - 1].text}
+                        {item.comments[item.comments.length - 1].postedBy._id == state._id ? (
                           <i
                             className="material-icons comment-clear"
-                            onClick={() => deleteComment(item._id, item.comments[0]._id)}
+                            onClick={() => deleteComment(item._id, item.comments[item.comments.length - 1]._id)}
                           >
                             clear
                           </i>
                         ) : null}
                       </h6>
-                      <h6 key={item.comments[1]._id}>
+                      <h6 key={item.comments[item.comments.length - 2]._id}>
                         <img
-                          src={item.comments[1].postedBy.dp}
+                          src={item.comments[item.comments.length - 2].postedBy.dp}
                           alt="dp"
                           className="comment-user-dp"
                         />
                         <span
                           style={{ fontFamily: "Supermercado One, cursive" }}
                         >
-                          {item.comments[1].postedBy.name}
+                          {item.comments[item.comments.length - 2].postedBy.name}
                         </span>{" "}
-                        {item.comments[1].text}
-                        {item.comments[1].postedBy._id == state._id ? (
+                        {item.comments[item.comments.length - 2].text}
+                        {item.comments[item.comments.length - 2].postedBy._id == state._id ? (
                           <i
                             className="material-icons comment-clear"
-                            onClick={() => deleteComment(item._id, item.comments[1]._id)}
+                            onClick={() => deleteComment(item._id, item.comments[item.comments.length - 2]._id)}
                           >
                             clear
                           </i>

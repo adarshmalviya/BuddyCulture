@@ -2,7 +2,7 @@
 
 ![website-img](https://user-images.githubusercontent.com/56603301/152735977-665f2b48-8dec-4909-8e13-86747704f812.png)
 
-
+## Link:->   https://buddyculture.herokuapp.com
 ## Available Scripts
 
 In the project directory, you can run:

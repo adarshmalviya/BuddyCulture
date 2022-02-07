@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Buddy Culture
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![website-img](https://user-images.githubusercontent.com/56603301/152735977-665f2b48-8dec-4909-8e13-86747704f812.png)
+
 
 ## Available Scripts
 

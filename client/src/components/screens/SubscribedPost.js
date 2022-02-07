@@ -145,93 +145,168 @@ const SubscribedPost = () => {
 
     return (
         <div className="home">
-            {data.map((item) => {
-                return (
-                    <div key={item._id} className="card home-card">
-                        <h5>
-                            <Link
-                                className="postedByName"
-                                to={
-                                    item.postedBy._id != state._id
-                                        ? "/profile/" + item.postedBy._id
-                                        : "/profile"
-                                }
-                            >
-                                {item.postedBy.name}
-                            </Link>
-                            {item.postedBy._id == state._id ? (
-                                <i
-                                    className="material-icons delete-icon"
-                                    onClick={() => deletePost(item._id)}
+            <div className="home-items">
+                {data.map((item) => {
+                    return (
+                        <div key={item._id} className="card home-card">
+                            <h5>
+                                <img src={item.postedBy.dp} alt="dp" className="user-dp" />
+                                <Link
+                                    className="postedByName"
+                                    to={
+                                        item.postedBy._id != state._id
+                                            ? "/profile/" + item.postedBy._id
+                                            : "/profile"
+                                    }
                                 >
-                                    delete
-                                </i>
-                            ) : null}
-                        </h5>
-                        <div className="home-card-img">
-                            <img className="home-card-img" src={item.photo} alt="home-img" />
-                        </div>
-                        <div className="home-card-content">
-                            <i className="material-icons btn-like">favorite</i>
-                            {item.likes.includes(state._id) ? (
-                                <i
-                                    className="material-icons thumb"
-                                    onClick={() => unlikePost(item._id)}
-                                >
-                                    thumb_down
-                                </i>
-                            ) : (
-                                <i
-                                    className="material-icons thumb"
-                                    onClick={() => likePost(item._id)}
-                                >
-                                    thumb_up
-                                </i>
-                            )}
+                                    {item.postedBy.name}
+                                </Link>
+                                {item.postedBy._id == state._id ? (
+                                    <i
+                                        className="material-icons delete-icon"
+                                        onClick={() => deletePost(item._id)}
+                                    >
+                                        delete
+                                    </i>
+                                ) : null}
+                            </h5>
+                            <div className="home-card-img">
+                                <img
+                                    className="home-card-img"
+                                    src={item.photo}
+                                    alt="home-img"
+                                />
+                            </div>
+                            <div className="home-card-content">
+                                <div className="like-content">
+                                    {item.likes.includes(state._id) ? (
+                                        <i
+                                            className="material-icons btn-liked"
+                                            onClick={() => unlikePost(item._id)}
+                                        >
+                                            favorite
+                                        </i>
+                                    ) : (
+                                        <i
+                                            className="material-icons btn-unliked"
+                                            onClick={() => likePost(item._id)}
+                                        >
+                                            favorite_border
+                                        </i>
+                                    )}
 
-                            <h6 className="home-card-content">{item.likes.length} likes</h6>
-                            <h6 className="home-card-content">{item.title}</h6>
-                            <p className="home-card-content">{item.body}</p>
-                            <div className="comment-box">
-                                {item.comments.map((record) => {
-                                    return (
-                                        <h6 key={record._id}>
-                                            <span
-                                                style={{ "fontFamily": "Supermercado One, cursive" }}
-                                            >
-                                                {record.postedBy.name}
-                                            </span>{" "}
-                                            {record.text}
-                                            {record.postedBy._id == state._id ? (
-                                                <i
-                                                    className="material-icons comment-clear"
-                                                    onClick={() => deleteComment(item._id, record._id)}
+                                    <h6 className="home-card-content">
+                                        {item.likes.length} likes
+                                    </h6>
+                                </div>
+
+                                <h6 className="home-card-content">{item.title}</h6>
+                                <p className="home-card-content">{item.body}</p>
+                                <div className="comment-box">
+                                    {item.comments.length > 2 ?
+                                        <React.Fragment>
+                                            <h6 key={item.comments[item.comments.length - 1]._id}>
+                                                <img
+                                                    src={item.comments[item.comments.length - 1].postedBy.dp}
+                                                    alt="dp"
+                                                    className="comment-user-dp"
+                                                />
+                                                <span
+                                                    style={{ fontFamily: "Supermercado One, cursive" }}
                                                 >
-                                                    clear
-                                                </i>
-                                            ) : null}
-                                        </h6>
-                                    );
-                                })}
+                                                    {item.comments[item.comments.length - 1].postedBy.name}
+                                                </span>{" "}
+                                                {item.comments[item.comments.length - 1].text}
+                                                {item.comments[item.comments.length - 1].postedBy._id == state._id ? (
+                                                    <i
+                                                        className="material-icons comment-clear"
+                                                        onClick={() => deleteComment(item._id, item.comments[item.comments.length - 1]._id)}
+                                                    >
+                                                        clear
+                                                    </i>
+                                                ) : null}
+                                            </h6>
+                                            <h6 key={item.comments[item.comments.length - 2]._id}>
+                                                <img
+                                                    src={item.comments[item.comments.length - 2].postedBy.dp}
+                                                    alt="dp"
+                                                    className="comment-user-dp"
+                                                />
+                                                <span
+                                                    style={{ fontFamily: "Supermercado One, cursive" }}
+                                                >
+                                                    {item.comments[item.comments.length - 2].postedBy.name}
+                                                </span>{" "}
+                                                {item.comments[item.comments.length - 2].text}
+                                                {item.comments[item.comments.length - 2].postedBy._id == state._id ? (
+                                                    <i
+                                                        className="material-icons comment-clear"
+                                                        onClick={() => deleteComment(item._id, item.comments[item.comments.length - 2]._id)}
+                                                    >
+                                                        clear
+                                                    </i>
+                                                ) : null}
+                                            </h6>
+                                            <Link to={`/post/${item._id}`} className='more_comment'>View all {item.comments.length} comments</Link>
+                                        </React.Fragment>
+                                        // );
 
-                                <form
-                                    onSubmit={(e) => {
-                                        e.preventDefault();
-                                        commentPost(e.target[0].value, item._id);
-                                        e.target[0].value = "";
-                                    }}
-                                >
-                                    <input
-                                        className="home-card-content"
-                                        type="text"
-                                        placeholder="Drop your comment"
-                                    />
-                                </form>
+                                        :
+                                        item.comments.map((record) => {
+                                            return (
+                                                <h6 key={record._id}>
+                                                    <img
+                                                        src={record.postedBy.dp}
+                                                        alt="dp"
+                                                        className="comment-user-dp"
+                                                    />
+                                                    <span
+                                                        style={{ fontFamily: "Supermercado One, cursive" }}
+                                                    >
+                                                        {record.postedBy.name}
+                                                    </span>{" "}
+                                                    {record.text}
+                                                    {record.postedBy._id == state._id ? (
+                                                        <i
+                                                            className="material-icons comment-clear"
+                                                            onClick={() => deleteComment(item._id, record._id)}
+                                                        >
+                                                            clear
+                                                        </i>
+                                                    ) : null}
+                                                </h6>
+                                            );
+                                        }
+                                        )}
+
+                                    <form
+                                        onSubmit={(e) => {
+                                            e.preventDefault();
+                                            commentPost(e.target[0].value, item._id);
+                                            e.target[0].value = "";
+                                        }}
+                                    >
+                                        <div className="comment-section">
+                                            <input
+                                                className="home-card-content"
+                                                type="text"
+                                                placeholder="Drop your comment"
+                                            />
+                                            <button type="submit" className="send-submit-btn">
+                                                <img
+                                                    src={send_img}
+                                                    alt="send_img"
+                                                    className="send_img"
+                                                />
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </div>
     );
 };

@@ -47,7 +47,7 @@ router.get('/mypost', requireLogin, (req, res) => {
         .then(myposts => { res.json({ mypost: myposts }) })
         .catch((err) => res.status(500).json({ err: err }))
 })
-router.get('/post/:id', requireLogin, (req, res) => {
+router.get('/post/:id', (req, res) => {
     Post.findById(req.params.id)
         .populate('postedBy', 'name email dp')
         .populate('comments.postedBy', '_id name dp')

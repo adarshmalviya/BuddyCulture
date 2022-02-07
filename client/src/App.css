@@ -259,13 +259,6 @@ button.navbar-toggler:focus {
   margin-top: 10px;
 } */
 .home {
-  /* background-image: url("../src/images/home_background_img.webp");
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-attachment: fixed;
-  background-size: cover; */
-  /* background: #40e0d0; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #ff0080,
@@ -276,6 +269,8 @@ button.navbar-toggler:focus {
 
   position: absolute;
   width: 100%;
+  min-height: 878px;
+  height: auto;
 }
 .home-userpost {
   height: auto;

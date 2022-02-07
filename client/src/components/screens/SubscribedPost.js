@@ -147,6 +147,7 @@ const SubscribedPost = () => {
     return (
         <div className="home">
             <div className="home-items">
+                {data.length === 0 ? <h2 className="no-post-found">No post found!</h2> : null}
                 {data.map((item) => {
                     return (
                         <div key={item._id} className="card home-card">

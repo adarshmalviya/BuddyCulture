@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "./../../App";
 import { Link } from "react-router-dom";
+import send_img from "../../images/send_img.svg";
 
 const SubscribedPost = () => {
     const [data, setData] = useState([]);

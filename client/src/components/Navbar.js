@@ -96,6 +96,10 @@ const NavbarComponent = () => {
   };
   const fetchUser = (query) => {
     setSearch(query);
+    if (query.length === 0) {
+      setUserDetails([])
+      return null;
+    }
     fetch('/search-users', {
       method: "post",
       headers: {
@@ -109,6 +113,8 @@ const NavbarComponent = () => {
 
   const handleClose = () => {
     setShowModal(false);
+    setSearch("")
+    setUserDetails([])
   };
   function getModal() {
     return (

@@ -149,6 +149,10 @@ button.navbar-toggler:focus {
 .unauth-signup {
   margin-right: -10px;
 }
+.more_comment {
+  text-decoration: none;
+  color: black;
+}
 
 /* Login and SignUp */
 .mycard {

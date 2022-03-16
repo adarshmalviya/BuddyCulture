@@ -12,7 +12,7 @@ const { GMAIL_U, GMAIL_P, EMAIL } = require('../config/keys')
 
 // Forget Password Section
 var transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "rediffmail",
     auth: {
         user: GMAIL_U,
         pass: GMAIL_P

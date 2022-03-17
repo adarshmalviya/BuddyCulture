@@ -11,12 +11,12 @@ const nodemailer = require('nodemailer')
 const { GMAIL_U, GMAIL_P, EMAIL, API_KEY } = require('../config/keys')
 
 // Forget Password Section
-var transporter = nodemailer.createTransport({
+const sendgridTransport = require('nodemailer-sendgrid-transport')
+const transporter = nodemailer.createTransport(sendgridTransport({
     auth: {
         api_key: API_KEY
     }
-});
-
+}));
 
 router.post('/signin', async (req, res) => {
     const { error } = validateUserSignIn(req.body);

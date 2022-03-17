@@ -17,6 +17,7 @@
     "joi": "^13.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.7",
-    "nodemailer": "^6.7.2"
+    "nodemailer": "^6.7.2",
+    "nodemailer-sendgrid-transport": "^0.2.0"
   }
 }

@@ -8,14 +8,12 @@ const jwt = require('jsonwebtoken')
 const requireLogin = require('../middlewares/requireLogin')
 const { JWT_SECRET } = require('../config/keys')
 const nodemailer = require('nodemailer')
-const { GMAIL_U, GMAIL_P, EMAIL } = require('../config/keys')
+const { GMAIL_U, GMAIL_P, EMAIL, API_KEY } = require('../config/keys')
 
 // Forget Password Section
 var transporter = nodemailer.createTransport({
-    service: "rediffmail",
     auth: {
-        user: GMAIL_U,
-        pass: GMAIL_P
+        api_key: API_KEY
     }
 });
 
